@@ -1,12 +1,8 @@
 public abstract class Coin implements metals {
-    protected double Cu;
-    protected double Mn;
-    protected double Ni;
-    protected double Zi;
-    protected  double Steel;
-    protected countryCode;
+    
+    protected String commonName;
+    protected double denomination;
+    protected String countryCode;
 
     abstract  Coin();
-    abstract Coin makeCoin();
-
 }
