@@ -10,15 +10,17 @@ public class Demo {
 	Scanner coinMaking = new Scanner(System.in);
 	
 
-	//Possibly consolidate this into makeCoin() 
+	//Possibly consolidate this into makeCoin()
+	System.out.println("-----------------------------------------------------------------------------");
+	System.out.println("Welcome to Deep Fake!");
 	System.out.println("What coin would you like to make?");
-	System.out.println("Enter a denomination USD or GBP");
+	System.out.println("Which countries coin do you want to make? Enter USD or GBP");
 	String counterfeitCoinCountry = coinMaking.nextLine();
-	if(counterfeitCoinCountry.compareTo("USD") == false) || (counterfeightCoinCountry.compareTo("GBP") == false) {
+	for(counterfeitCoinCountry.compareTo("USD") == false) || (counterfeightCoinCountry.compareTo("GBP") == false) {
 		System.out.println("We can't make that type of coin. \n Try again.");
-		CounterfeightCoinCountry = coinMaking.nextLin();
+		CounterfeightCoinCountry = coinMaking.nextLine();
 	}
-	else if(counterfeitCoinCountry.compareTo("USD") == true) {
+	if(counterfeitCoinCountry.compareTo("USD") == true) {
 		System.out.println("You want to make a USD Coin.");
 		System.out.println("What denomination do you want to make?");
 	}
