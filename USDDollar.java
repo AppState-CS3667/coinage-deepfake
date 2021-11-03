@@ -1,17 +1,10 @@
 public class USDDollar implements Coin {
-    protected USDDollar() {
-	commonName = "USDDollar";
-    }    
-    public void setCu(double percent) {
-	cu = percent;
-    }
-    public void setZi(double percent) {
-	zi = percent;
-    }
-    public void setMn(double percent) {
-	mn = percent;
-    }
-    public void setNi(double percent) {
-	ni = percent;
-    }
+    
+   public USDDollar(double denomination, String countryCode, smelting compasition) {
+        super(denomination, countryCode, compasition);
+   }
+
+   public void display () {
+       System.out.println("Minting a USD Dollar!");
+   }
 }

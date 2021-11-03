@@ -13,4 +13,6 @@ public abstract class Coin implements smelting {
         System.out.println("Beginning smelting:");
         compasition.smelt();
     }
+
+    public abstract void display();
 }
