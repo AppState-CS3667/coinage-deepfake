@@ -1,9 +1,8 @@
 public class USDMint extends MintFactory {
     private volatile static USDMint uniqueMint;
-
+    private String commonName = "";
     private USDMint(double denom, String cc) {
 	rand.setSeed((int)denom * 17);
-	makeCoin(denom, cc);
     } 
     //USDMint.getInstance() should be called 
     public static USDMint getInstance() {
@@ -16,9 +15,34 @@ public class USDMint extends MintFactory {
 	    }
 	}
     }
-    
-    private void makeCoin(double denom, String cc) {
-		
+    //To be called in Demo
+    public USDCoin makeCoin(double denom) {
+	switch(denom) {
+	    case 0.01:
+		commonName = "penny";
+		break;
+	    case 0.05:
+		commonName = "nickel";
+		break;
+	    case 0.1:
+		commonName = "dime";
+		break;
+	    case 0.25:
+		commonName = "quarter";
+		break;
+	    case 0.5:
+		commonName = "halfdollar";
+		break;
+	    case 1:
+		commonName = "dollar";
+		break;
+
+	}
+	USDCoin coin = manafacture();
+	coin.setInspect(inspection());
+	coin.setSmooth(smoothing());
+	coin.setBuff(buffing());
+	return coin;
     }
     //implement in smelt?
     private USDCoin manafacture() {
