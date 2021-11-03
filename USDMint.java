@@ -24,32 +24,30 @@ public class USDMint extends MintFactory {
 		c = new USDPenny();
 		break;
 	    case 0.05:
-		commonName = "USDNickel";
+		c = new USDNickel();
 		break;
 	    case 0.1:
-		commonName = "USDDime";
+		c = new USDDime();
 		break;
 	    case 0.25:
-		commonName = "USDQuarter";
+		c = new USDQuarter();
 		break;
 	    case 0.5:
-		commonName = "USDHalfdollar";
+		c = new USDHalfdollar();
 		break;
 	    case 1:
-		commonName = "USDDollar";
+		c = new USDDollar();
 		break;
 
 	}
-	Coin coin = manafacture();
-	coin.setInspect(inspection());
-	coin.setSmooth(smoothing());
-	coin.setBuff(buffing());
-	return coin;
+	manafacture();
+	c.setInspect(inspection());
+	c.setSmooth(smoothing());
+	c.setBuff(buffing());
     }
     //implement in smelt?
-    private USDCoin manafacture() {
-	Smelt usSmelt = new Smelt(c);
-	return usSmelt.run();
+    private void manafacture() {
+	Smelt.run(c);
     }
     private boolean inspection() {
 	// 1/12 chance of failing inspection 
