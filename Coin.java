@@ -1,8 +1,4 @@
-public abstract class Coin implements Metals {
-    public boolean inspect;
-    public boolean smooth;
-    protected String commonName;
-
+public abstract class Coin implements smelting {
     protected double denomination;
     protected String countryCode;
     private smelting compasition;
