@@ -1,5 +1,6 @@
 public class USDMint extends MintFactory {
     private volatile static USDMint uniqueMint;
+    private Coin c;
     private String commonName = "";
     private USDMint(double denom, String cc) {
 	rand.setSeed((int)denom * 17);
@@ -17,9 +18,10 @@ public class USDMint extends MintFactory {
     }
     //To be called in Demo
     public Coin makeCoin(double denom) {
+    		switch(denom) {
 	switch(denom) {
 	    case 0.01:
-		commonName = "USDPenny";
+		c = new USDPenny();
 		break;
 	    case 0.05:
 		commonName = "USDNickel";
@@ -46,7 +48,7 @@ public class USDMint extends MintFactory {
     }
     //implement in smelt?
     private USDCoin manafacture() {
-	Smelt usSmelt = new Smelt(commonName);
+	Smelt usSmelt = new Smelt(c);
 	return usSmelt.run();
     }
     private boolean inspection() {
