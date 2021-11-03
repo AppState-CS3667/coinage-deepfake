@@ -1,6 +1,3 @@
-public class smelting {
-	
-	public void run(Coin c) {
-		c.getCu()
-	}      
+public interface smelting {
+	public void smelt();
 }
