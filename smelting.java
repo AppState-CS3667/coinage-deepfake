@@ -1,6 +1,6 @@
 public class smelting {
 	
-	private Coin baseCoin() {
-
-	}        
+	public void run(Coin c) {
+		c.getCu()
+	}      
 }
