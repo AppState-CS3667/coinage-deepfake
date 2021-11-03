@@ -16,29 +16,29 @@ public class USDMint extends MintFactory {
 	}
     }
     //To be called in Demo
-    public USDCoin makeCoin(double denom) {
+    public Coin makeCoin(double denom) {
 	switch(denom) {
 	    case 0.01:
-		commonName = "penny";
+		commonName = "USDPenny";
 		break;
 	    case 0.05:
-		commonName = "nickel";
+		commonName = "USDNickel";
 		break;
 	    case 0.1:
-		commonName = "dime";
+		commonName = "USDDime";
 		break;
 	    case 0.25:
-		commonName = "quarter";
+		commonName = "USDQuarter";
 		break;
 	    case 0.5:
-		commonName = "halfdollar";
+		commonName = "USDHalfdollar";
 		break;
 	    case 1:
-		commonName = "dollar";
+		commonName = "USDDollar";
 		break;
 
 	}
-	USDCoin coin = manafacture();
+	Coin coin = manafacture();
 	coin.setInspect(inspection());
 	coin.setSmooth(smoothing());
 	coin.setBuff(buffing());
