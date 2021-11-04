@@ -7,18 +7,17 @@ public class USDMint extends MintFactory {
 	cc = cc_;
     } 
     //USDMint.getInstance() should be called 
-    public static USDMint getInstance() {
+    public static USDMint getInstance(double denom, String cc) {
 	if (uniqueMint == null) {
 	    synchronized (USDMint.class) {
 		if (uniqueMint == null) {
-		    // denomination and  countryCode will be set in the Demo class 
 		    uniqueMint = new USDMint(denom, cc); 
 		}
 	    }
 	}
     }
     //To be called in Demo
-    public Coin makeCoin(double denom, String cc) {
+    public Coin makeCoin() {
 	switch(denom) {
 	    case 0.01:
 		c = new USDPenny(0.01, cc, new CompP());

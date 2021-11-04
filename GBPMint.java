@@ -7,18 +7,17 @@ public class GBPMint extends MintFactory {
 	cc = cc_;
     } 
 
-    public static GBPMint getInstance() {
+    public static GBPMint getInstance(double denom, String cc) {
 	if (uniqueMint == null) {
 	    synchronized (GBPMint.class) {
 		if (uniqueMint == null) {
-		    // denomination and  countryCode will be set in the Demo class 
 		    uniqueMint = new GBPMint(denom, cc); 
 		}
 	    }
 	}
     }
     //To be called in Demo
-    public Coin makeCoin(double denom, String cc) {
+    public Coin makeCoin() {
 	switch(denom) {
 	    case 0.01:
 		c = new GBPPence(0.01, cc, new CompPT());
