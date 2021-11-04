@@ -8,28 +8,43 @@ public class Demo {
 
 	//Coin demoCoin = new demoCoin();
 	//Scanner coinMaking = new Scanner(System.in);
-	
+		private String counterfeitCoinCountry;
+		private double counterfeitCoinDenomination;
 
 	//Possibly consolidate this into makeCoin()
-	System.out.println("-----------------------------------------------------------------------------");
-	System.out.println("Welcome to Deep Fake!");
-	System.out.println("What coin would you like to make?");
-	System.out.println("Which counties coin do you want to make? Enter USD or GBP:");
-	String counterfeitCoinCountry = coinMaking.nextLine();
-	counterfeitCoinCountry.toUpperCase();
+		System.out.println("-----------------------------------------------------------------------------");
+		System.out.println("Welcome to Deep Fake!");
+		System.out.println("What coin would you like to make?");
+		System.out.println("Which counties coin do you want to make? Enter USD or GBP:");
+		counterfeitCoinCountry = coinMaking.nextLine();
+		counterfeitCoinCountry.toUpperCase();
 	while((counterfeitCoinCountry.compareTo("USD") == false) && (counterfeitCoinCountry.compareTo("GBP") == false)) {
 		System.out.println("We can't make that type of coin. \n Try again.");
 		CounterfeitCoinCountry = coinMaking.nextLine();
 		counterfeitCoinCountry.toUpperCase();
 	}
-	if(counterfeitCoinCountry.compareTo("USD") == true) {
+
+	if(getCounterfeitCoinCountry().compareTo("USD") == true) {
 		System.out.println("You want to make a USD Coin.");
 		System.out.println("What denomination do you want to make?");
+		counterfeitCoinDenomination = coinMaking.NextDouble();
 	}
-
-	else if(counterfeitCoinCountry.compareTo("GBP") == true) {
+	else if(getCounterfeitCoinCountry().compareTo("GBP") == true) {
 		System.out.println("You want to make a GBP Coin.");
 		System.out.println("What denomination do you want to make?");
+		counterfeitCoinDenomination = coinMaking.NextDouble();
+	}
+	
+	
+	
+	public String getCounterfeitCoinCountry(counterfeitCoinCountry) {
+		this.counterfeitCoinCountry = counterfeitCoinCountry;
+		return counterfeitCoinCountry;
+	}
+
+	public double getCounterfeitCoinDenomionation(counterfietCoinDenomination) {
+		this.counterfeitCoinDenomination = counterfietCoinDenomination;
+		return counterfeitCoinDenomination;
 	}
 	
 	
