@@ -1,18 +1,17 @@
-public class USDMint extends MintFactory {
-    private volatile static USDMint uniqueMint;
+public class GBPMint extends MintFactory {
+    private volatile static GBPMint uniqueMint;
     private Coin c;
-    private String commonName = "";
 
-    private USDMint(double denom, String cc) {
+    private GBPMint(double denom, String cc) {
 		rand.setSeed((int)denom * 17);
     } 
-    //USDMint.getInstance() should be called 
-    public static USDMint getInstance() {
+ 
+    public static GBPMint getInstance() {
 		if (uniqueMint == null) {
-			synchronized (USDMint.class) {
+			synchronized (GBPMint.class) {
 				if (uniqueMint == null) {
 					// denomination and  countryCode will be set in the Demo class 
-					uniqueMint = new USDMint(denomination, countryCode) 
+					uniqueMint = new GBPMint(denomination, countryCode) 
 				}
 			}
 		}
@@ -21,24 +20,32 @@ public class USDMint extends MintFactory {
     public Coin makeCoin(double denom) {
 		switch(denom) {
 			case 0.01:
-			c = new USDPenny(0.01, "USD", new CompP());
+			c = new GBPPence(0.01, "GBP", new Comp);
 			break;
+            case 0.02:
+            c = new GBPTwoPence(0.02, "GBP", new Comp);
+            break;
 			case 0.05:
-			c = new USDNickel(0.05, "USD", new CompNFFTF());
+			c = new GBPFivePence(0.05, "GBP", new Comp);
 			break;
 			case 0.1:
-			c = new USDDime(0.1, "USD", new CompHQD());
+			c = new GBPTenPence(0.1, "GBP", new Comp);
 			break;
-			case 0.25:
-			c = new USDQuarter(0.25, "USD", new CompHQD());
+			case 0.20:
+			c = new GBPTwentyPence(0.20, "GBP", new Comp);
 			break;
 			case 0.5:
-			c = new USDHalfdollar(0.5, "USD", new CompHQD());
+			c = new GBPFiftyPence(0.5, "GBP", new CompHQD());
   			break;
 			case 1:
-			c = new USDDollar(1, "USD", new CompD());
+			c = new GBPPound(1, "GBP", new CompD());
 			break;
-
+            case 2:
+            c = new GBPTwoPound(2, "GBP", new Comp);
+            break;
+            case 5:
+            c = new GBPFivePound(5, "GBP", new Comp);
+            break;
 		}
 		manafacture();
 		c.setInspect(inspection());
