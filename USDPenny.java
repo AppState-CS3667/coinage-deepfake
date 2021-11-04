@@ -1,4 +1,4 @@
-public class USDPenny implements Coin {
+public class USDPenny extends Coin {
     
     public USDPenny(double denomination, String countryCode, smelting compasition) {
          super(denomination, countryCode, compasition);

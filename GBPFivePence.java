@@ -1,4 +1,4 @@
-public class GBPFivePence implements Coin {
+public class GBPFivePence extends Coin {
     
     public GBPFivePence(double denomination, String countryCode, smelting compasition) {
          super(denomination, countryCode, compasition);

@@ -1,4 +1,4 @@
-public class USDNickel implements Coin {
+public class USDNickel extends Coin {
     
     public USDNickel(double denomination, String countryCode, smelting compasition) {
          super(denomination, countryCode, compasition);
