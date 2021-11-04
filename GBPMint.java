@@ -3,7 +3,6 @@ public class GBPMint extends MintFactory {
     private Coin c;
 
     private GBPMint(double denom_, String cc_) {
-	rand.setSeed((int)denom * 17);
 	denom = denom_;
 	cc = cc_;
     } 
