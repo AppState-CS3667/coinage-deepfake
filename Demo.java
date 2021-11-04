@@ -7,7 +7,7 @@ public class Demo {
         public void main(String[] args) {
 
 	//Coin demoCoin = new demoCoin();
-	//Scanner coinMaking = new Scanner(System.in);
+	Scanner coinMaking = new Scanner(System.in);
 		private String counterfeitCoinCountry;
 		private double counterfeitCoinDenomination;
 
@@ -27,14 +27,14 @@ public class Demo {
 	if(getCounterfeitCoinCountry().compareTo("USD") == true) {
 		System.out.println("You want to make a USD Coin.");
 		System.out.println("What denomination do you want to make?");
-		counterfeitCoinDenomination = coinMaking.NextDouble();
+		counterfeitCoinDenomination = coinMaking.nextDouble();
 		USDMint = USDMint.getInstance(getCounterfietCoinDenomination(), getCounterfeitCoinCountryCode());
 		USDMint.makeCoin();
 	}
 	else if(getCounterfeitCoinCountry().compareTo("GBP") == true) {
 		System.out.println("You want to make a GBP Coin.");
 		System.out.println("What denomination do you want to make?");
-		counterfeitCoinDenomination = coinMaking.NextDouble();
+		counterfeitCoinDenomination = coinMaking.nextDouble();
 		GBPMint = GBPMint.getInstance(getCounterfeitCoinDenomination(), getCounterfietCoinCountryCode());
 		GBPMint.makeCoin();
 	}
