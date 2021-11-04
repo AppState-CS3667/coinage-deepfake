@@ -17,7 +17,7 @@ public class Demo {
 		System.out.println("What coin would you like to make?");
 		System.out.println("Which counties coin do you want to make? Enter USD or GBP:");
 		counterfeitCoinCountry = coinMaking.nextLine();
-		counterfeitCoinCountry.toUpperCase();
+		counterfeitCoinCountry = counterfeitCoinCountry.toUpperCase();
 	while((counterfeitCoinCountry.compareTo("USD") == false) && (counterfeitCoinCountry.compareTo("GBP") == false)) {
 		System.out.println("We can't make that type of coin. \n Try again.");
 		CounterfeitCoinCountry = coinMaking.nextLine();
