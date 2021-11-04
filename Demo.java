@@ -36,12 +36,12 @@ public class Demo {
 	}
 	
 	
-	
+	//Not needed
 	public String getCounterfeitCoinCountry(counterfeitCoinCountry) {
 		this.counterfeitCoinCountry = counterfeitCoinCountry;
 		return counterfeitCoinCountry;
 	}
-
+	//Not needed
 	public double getCounterfeitCoinDenomionation(counterfietCoinDenomination) {
 		this.counterfeitCoinDenomination = counterfietCoinDenomination;
 		return counterfeitCoinDenomination;
@@ -51,7 +51,7 @@ public class Demo {
 
 	Coin USDCoin = new USDCoin();
 	Coin GBPCoin = new GBPCoin();
-
+	//not needed
 	System.out.println(USDCoin);
 	System.out.println("A USD " + USDCoin.getDescription() + " coin has been minted.");
 	System.out.println("This coin is composed of " + UDSCoin.getComposition());
