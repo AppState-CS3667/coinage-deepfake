@@ -11,7 +11,7 @@ public class GBPMint extends MintFactory {
 			synchronized (GBPMint.class) {
 				if (uniqueMint == null) {
 					// denomination and  countryCode will be set in the Demo class 
-					uniqueMint = new GBPMint(denomination, countryCode) 
+					uniqueMint = new GBPMint(denomination, countryCode); 
 				}
 			}
 		}
@@ -20,31 +20,31 @@ public class GBPMint extends MintFactory {
     public Coin makeCoin(double denom) {
 		switch(denom) {
 			case 0.01:
-			c = new GBPPence(0.01, "GBP", new Comp);
+			c = new GBPPence(0.01, "GBP", new CompPT());
 			break;
             case 0.02:
-            c = new GBPTwoPence(0.02, "GBP", new Comp);
+            c = new GBPTwoPence(0.02, "GBP", new CompPT());
             break;
 			case 0.05:
-			c = new GBPFivePence(0.05, "GBP", new Comp);
+			c = new GBPFivePence(0.05, "GBP", new CompNFFTF());
 			break;
 			case 0.1:
-			c = new GBPTenPence(0.1, "GBP", new Comp);
+			c = new GBPTenPence(0.1, "GBP", new CompNFFTF());
 			break;
 			case 0.20:
-			c = new GBPTwentyPence(0.20, "GBP", new Comp);
+			c = new GBPTwentyPence(0.20, "GBP", new CompTp());
 			break;
 			case 0.5:
-			c = new GBPFiftyPence(0.5, "GBP", new CompHQD());
+			c = new GBPFiftyPence(0.5, "GBP", new CompNFFTF());
   			break;
 			case 1:
-			c = new GBPPound(1, "GBP", new CompD());
+			c = new GBPPound(1, "GBP", new CompPo());
 			break;
             case 2:
-            c = new GBPTwoPound(2, "GBP", new Comp);
+            c = new GBPTwoPound(2, "GBP", new CompT());
             break;
             case 5:
-            c = new GBPFivePound(5, "GBP", new Comp);
+            c = new GBPFivePound(5, "GBP", new CompNFFTF());
             break;
 		}
 		manafacture();

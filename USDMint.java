@@ -12,7 +12,7 @@ public class USDMint extends MintFactory {
 			synchronized (USDMint.class) {
 				if (uniqueMint == null) {
 					// denomination and  countryCode will be set in the Demo class 
-					uniqueMint = new USDMint(denomination, countryCode) 
+					uniqueMint = new USDMint(denomination, countryCode); 
 				}
 			}
 		}
