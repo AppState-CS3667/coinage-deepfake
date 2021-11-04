@@ -2,8 +2,10 @@ public class GBPMint extends MintFactory {
     private volatile static GBPMint uniqueMint;
     private Coin c;
 
-    private GBPMint(double denom, String cc) {
+    private GBPMint(double denom_, String cc_) {
 	rand.setSeed((int)denom * 17);
+	denom = denom_;
+	cc = cc_;
     } 
 
     public static GBPMint getInstance() {
@@ -11,7 +13,7 @@ public class GBPMint extends MintFactory {
 	    synchronized (GBPMint.class) {
 		if (uniqueMint == null) {
 		    // denomination and  countryCode will be set in the Demo class 
-		    uniqueMint = new GBPMint(denomination, countryCode); 
+		    uniqueMint = new GBPMint(denom, cc); 
 		}
 	    }
 	}

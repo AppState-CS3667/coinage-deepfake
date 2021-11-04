@@ -2,8 +2,10 @@ public class USDMint extends MintFactory {
     private volatile static USDMint uniqueMint;
     private Coin c;
 
-    private USDMint(double denom, String cc) {
+    private USDMint(double denom_, String cc_) {
 	rand.setSeed((int)denom * 17);
+	denom = denom_;
+	cc = cc_;
     } 
     //USDMint.getInstance() should be called 
     public static USDMint getInstance() {
@@ -11,7 +13,7 @@ public class USDMint extends MintFactory {
 	    synchronized (USDMint.class) {
 		if (uniqueMint == null) {
 		    // denomination and  countryCode will be set in the Demo class 
-		    uniqueMint = new USDMint(denomination, countryCode); 
+		    uniqueMint = new USDMint(denom, cc); 
 		}
 	    }
 	}
