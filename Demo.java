@@ -39,11 +39,23 @@ public class Demo {
 		GBPMint.makeCoin();
 	}
 	
+<<<<<<< HEAD
 	public String getCounterfeitCoinCountry(String counterfeitCoinCountry) {
 		return counterfeitCoinCountry;
 	}
 
 	public double getCounterfeitCoinDenomionation(double counterfietCoinDenomination) {
+=======
+	
+	//Not needed
+	public String getCounterfeitCoinCountry(counterfeitCoinCountry) {
+		this.counterfeitCoinCountry = counterfeitCoinCountry;
+		return counterfeitCoinCountry;
+	}
+	//Not needed
+	public double getCounterfeitCoinDenomionation(counterfietCoinDenomination) {
+		this.counterfeitCoinDenomination = counterfietCoinDenomination;
+>>>>>>> fe7acef9a4166c6c99c2a029cb7888889ded4fcc
 		return counterfeitCoinDenomination;
 	}
 	
@@ -57,12 +69,21 @@ public class Demo {
 	
 	
 
+<<<<<<< HEAD
 //	Coin USDCoin = new USDCoin();
 //	Coin GBPCoin = new GBPCoin();
 
 //	System.out.println(USDCoin);
 //	System.out.println("A USD " + USDCoin.getDescription() + " coin has been minted.");
 //	System.out.println("This coin is composed of " + UDSCoin.getComposition());
+=======
+	Coin USDCoin = new USDCoin();
+	Coin GBPCoin = new GBPCoin();
+	//not needed
+	System.out.println(USDCoin);
+	System.out.println("A USD " + USDCoin.getDescription() + " coin has been minted.");
+	System.out.println("This coin is composed of " + UDSCoin.getComposition());
+>>>>>>> fe7acef9a4166c6c99c2a029cb7888889ded4fcc
 
   //      System.out.println("-----------------------------------------------------------------------------");
 //	System.out.println("A GBP " + GBPCoin.getDesciption() + "");
