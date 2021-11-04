@@ -1,7 +1,6 @@
 public class USDMint extends MintFactory {
     private volatile static USDMint uniqueMint;
     private Coin c;
-    private String commonName = "";
 
     private USDMint(double denom, String cc) {
 		rand.setSeed((int)denom * 17);
@@ -40,19 +39,23 @@ public class USDMint extends MintFactory {
 			break;
 
 		}
+		c.display();
 		manafacture();
-		c.setInspect(inspection());
-		c.setSmooth(smoothing());
-		c.setBuff(buffing());
+		if (!inspection()) return null;
+		System.out.println("Passed inspection!");
+		if(!smoothing()) return null;
+		System.out.println("Passed smoothing!");
+		if(!buffing()) return null;
+		System.out.println("Passed buffing!");
+		return c;
     }
 	
-    //implement in smelt?
     private void manafacture() {
 	    c.smelt();
     }
     private boolean inspection() {
 	// 1/12 chance of failing inspection 
-	return rand.nextInt(12) != 0; 
+	return rand.nextInt(12) != 0
     }
     private  boolean smoothing() {
 	// 1/1000 chance of failing smoothing

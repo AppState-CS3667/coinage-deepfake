@@ -47,13 +47,17 @@ public class GBPMint extends MintFactory {
             c = new GBPFivePound(5, "GBP", new CompNFFTF());
             break;
 		}
+		c.display();
 		manafacture();
-		c.setInspect(inspection());
-		c.setSmooth(smoothing());
-		c.setBuff(buffing());
+		if (!inspection()) return null;
+		System.out.println("Passed inspection!");
+		if(!smoothing()) return null;
+		System.out.println("Passed smoothing!");
+		if(!buffing()) return null;
+		System.out.println("Passed buffing!");
+		return c;
     }
 	
-    //implement in smelt?
     private void manafacture() {
 	    c.smelt();
     }
