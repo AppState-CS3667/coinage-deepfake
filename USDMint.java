@@ -3,7 +3,6 @@ public class USDMint extends MintFactory {
     private Coin c;
 
     private USDMint(double denom_, String cc_) {
-	rand.setSeed((int)denom * 17);
 	denom = denom_;
 	cc = cc_;
     } 
@@ -43,12 +42,24 @@ public class USDMint extends MintFactory {
 	}
 	c.display();
 	manafacture();
-	if (!inspection()) return null;
-	System.out.println("Passed inspection!");
-	if(!smoothing()) return null;
-	System.out.println("Passed smoothing!");
-	if(!buffing()) return null;
-	System.out.println("Passed buffing!");
+	if (!inspection()) {
+	    System.out.println("Failed inspection.");
+	    return null;
+	} else {
+	    System.out.println("Passed inspection!");
+	    if(!smoothing()) {
+		System.out.println("Failed inspection.");
+		return null;
+	    } else {
+		System.out.println("Passed smoothing!");
+		if(!buffing()) {
+		    System.out.println("Failed inspection.");
+		    return null;
+		} else {
+		    System.out.println("Passed buffing!");
+		}
+	    }
+	}
 	return c;
     }
 
