@@ -1,7 +1,7 @@
 public class GBPPence extends Coin {
     
-    public GBPPence(double denomination, String countryCode, smelting compasition) {
-         super(denomination, countryCode, compasition);
+    public GBPPence(double denomination, String countryCode, smelting composition) {
+         super(denomination, countryCode, composition);
     }
  
     public void display () {

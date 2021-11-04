@@ -1,7 +1,7 @@
 public class GBPFivePound extends Coin {
     
-    public GBPFivePound(double denomination, String countryCode, smelting compasition) {
-         super(denomination, countryCode, compasition);
+    public GBPFivePound(double denomination, String countryCode, smelting composition) {
+         super(denomination, countryCode, composition);
     }
  
     public void display () {

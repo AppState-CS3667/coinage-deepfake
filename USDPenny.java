@@ -1,7 +1,7 @@
 public class USDPenny extends Coin {
     
-    public USDPenny(double denomination, String countryCode, smelting compasition) {
-         super(denomination, countryCode, compasition);
+    public USDPenny(double denomination, String countryCode, smelting composition) {
+         super(denomination, countryCode, composition);
     }
  
     public void display () {

@@ -1,7 +1,7 @@
 public class USDHalfDollar extends Coin {
     
-    public USDHalfDollar(double denomination, String countryCode, smelting compasition) {
-         super(denomination, countryCode, compasition);
+    public USDHalfDollar(double denomination, String countryCode, smelting composition) {
+         super(denomination, countryCode, composition);
     }
  
     public void display () {
