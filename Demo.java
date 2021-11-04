@@ -28,37 +28,45 @@ public class Demo {
 		System.out.println("You want to make a USD Coin.");
 		System.out.println("What denomination do you want to make?");
 		counterfeitCoinDenomination = coinMaking.NextDouble();
+		USDMint = USDMint.getInstance(getCounterfietCoinDenomination(), getCounterfeitCoinCountryCode());
+		USDMint.makeCoin();
 	}
 	else if(getCounterfeitCoinCountry().compareTo("GBP") == true) {
 		System.out.println("You want to make a GBP Coin.");
 		System.out.println("What denomination do you want to make?");
 		counterfeitCoinDenomination = coinMaking.NextDouble();
+		GBPMint = GBPMint.getInstance(getCounterfeitCoinDenomination(), getCounterfietCoinCountryCode());
+		GBPMint.makeCoin();
 	}
 	
-	
-	
-	public String getCounterfeitCoinCountry(counterfeitCoinCountry) {
-		this.counterfeitCoinCountry = counterfeitCoinCountry;
+	public String getCounterfeitCoinCountry(String counterfeitCoinCountry) {
 		return counterfeitCoinCountry;
 	}
 
-	public double getCounterfeitCoinDenomionation(counterfietCoinDenomination) {
-		this.counterfeitCoinDenomination = counterfietCoinDenomination;
+	public double getCounterfeitCoinDenomionation(double counterfietCoinDenomination) {
 		return counterfeitCoinDenomination;
+	}
+	
+	public void setCounterfeitCoinCountry(String counterfeitCoinCountry) {
+		this.counteritCoinCountry = counterfeitCoinCountry;
+	}
+
+	public void setCounterfeitCoinDenomination(double counterfeitCoinDenomination) {
+		this.counterfeitCoinDenomination = counterfeitCoinDenomination;
 	}
 	
 	
 
-	Coin USDCoin = new USDCoin();
-	Coin GBPCoin = new GBPCoin();
+//	Coin USDCoin = new USDCoin();
+//	Coin GBPCoin = new GBPCoin();
 
-	System.out.println(USDCoin);
-	System.out.println("A USD " + USDCoin.getDescription() + " coin has been minted.");
-	System.out.println("This coin is composed of " + UDSCoin.getComposition());
+//	System.out.println(USDCoin);
+//	System.out.println("A USD " + USDCoin.getDescription() + " coin has been minted.");
+//	System.out.println("This coin is composed of " + UDSCoin.getComposition());
 
-        System.out.println("-----------------------------------------------------------------------------");
-	System.out.println("A GBP " + GBPCoin.getDesciption() + "");
-	System.out.println(GBPCOIN);
+  //      System.out.println("-----------------------------------------------------------------------------");
+//	System.out.println("A GBP " + GBPCoin.getDesciption() + "");
+//	System.out.println(GBPCOIN);
 
 //	USDCoin.toString();
 	
