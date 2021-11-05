@@ -18,16 +18,15 @@ public class USDMint extends MintFactory {
     }
     //To be called in Demo
     public Coin makeCoin() {
-	switch(denom) {
-	    case 0.01:
+	if(denom == 0.01) {
 		c = new USDPenny(0.01, cc, new CompP());
-		break;
-	    case 0.05:
+	}
+	else if (denom == 0.05) {
 		c = new USDNickel(0.05, cc, new CompNFFTF());
-		break;
-	    case 0.1:
+	}
+	else if (denom == 0.1) {
 		c = new USDDime(0.1, cc, new CompHQD());
-		break;
+	}
 	    case 0.25:
 		c = new USDQuarter(0.25, cc, new CompHQD());
 		break;
@@ -67,7 +66,7 @@ public class USDMint extends MintFactory {
     }
     private boolean inspection() {
 	// 1/12 chance of failing inspection 
-	return rand.nextInt(12) != 0
+	return rand.nextInt(12) != 0;
     }
     private  boolean smoothing() {
 	// 1/1000 chance of failing smoothing
