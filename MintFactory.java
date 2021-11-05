@@ -3,5 +3,5 @@ public abstract class MintFactory {
     protected double denom = 0;
     protected String cc = "";
     protected Random rand = new Random();
-    abstract void makeCoin(double denom, String cc);
+    abstract Coin makeCoin();
 }
