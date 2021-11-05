@@ -36,6 +36,9 @@ public class USDMint extends MintFactory {
 		else if (denom == 1) {
 			c = new USDDollar(1, cc, new CompD());
 		}
+		else {
+			c = Coin.NULL;
+		}
 
 		
 		c.display();

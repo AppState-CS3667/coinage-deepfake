@@ -6,11 +6,11 @@ public abstract class Coin implements smelting {
     private static class NullCoin extends Coin {
         @Override
         public void smelt() {
-            //print null behavior for smelting here
+            System.out.println("Null coin Cant smelt");
         }
         @Override
         public void display() {
-            System.out.println("");
+            System.out.println("Incompatable denomination Null coin created");
         }
     }
     public Coin(double denomination, String countryCode, smelting composition) {
