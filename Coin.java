@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-public abstract class Coin implements metals {
-    
-    protected String commonName;
-    protected double denomination;
-    protected String countryCode;
-
-    abstract  Coin();
-}
-=======
 public abstract class Coin implements smelting {
     protected double denomination;
     protected String countryCode;
@@ -26,4 +16,4 @@ public abstract class Coin implements smelting {
 
     public abstract void display();
 }
->>>>>>> 348b04504c0a06f3182d50f4f3e823c5d5496870
+
