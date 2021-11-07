@@ -12,6 +12,9 @@ public abstract class Coin implements smelting {
         public void display() {
             System.out.println("Incompatable denomination Null coin created");
         }
+	public NullCoin() {
+	    super(0.0,"",null);
+	}
     }
     public Coin(double denomination, String countryCode, smelting composition) {
         this.denomination = denomination;
