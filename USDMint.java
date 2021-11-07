@@ -15,6 +15,7 @@ public class USDMint extends MintFactory {
 		}
 	    }
 	}
+	return uniqueMint;
     }
     //To be called in Demo
     public Coin makeCoin() {
