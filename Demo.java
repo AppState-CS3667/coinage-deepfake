@@ -19,7 +19,7 @@ public class Demo {
 		while((!counterfeitCoinCountry.equals("USD")) && (!counterfeitCoinCountry.equals("GBP"))) {
 			System.out.println("We can't make that type of coin. \n Try again.");
 			counterfeitCoinCountry = coinMaking.nextLine();
-			counterfeitCoinCountry.toUpperCase();
+			counterfeitCoinCountry = counterfeitCoinCountry.toUpperCase();
 		}
 
 		if(counterfeitCoinCountry.equals("USD")) {
