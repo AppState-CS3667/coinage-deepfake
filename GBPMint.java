@@ -58,9 +58,9 @@ public class GBPMint extends MintFactory {
 					System.out.println("Passed buffing!");
 				}
 			}
+		}
+		return c;
 	}
-	return c;
-}
 
     private void manafacture() {
 	c.smelt();

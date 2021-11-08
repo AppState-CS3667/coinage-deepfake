@@ -63,7 +63,7 @@ public class USDMint extends MintFactory {
 			}
 	  }
 	  return c;
- }
+ 	}
 
     private void manafacture() {
 	c.smelt();
