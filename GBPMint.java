@@ -3,17 +3,15 @@ public class GBPMint extends MintFactory {
     private Coin c;
 
     private GBPMint(double denom_, String cc_) {
-		denom = denom_;
-		cc = cc_;
+	denom = denom_;
+	cc = cc_;
     } 
 
     public static GBPMint getInstance(double denom, String cc) {
+	if (uniqueMint == null) {
+	    synchronized (GBPMint.class) {
 		if (uniqueMint == null) {
-			synchronized (GBPMint.class) {
-				if (uniqueMint == null) {
-					uniqueMint = new GBPMint(denom, cc); 
-				}
-			}
+		    uniqueMint = new GBPMint(denom, cc); 
 		}
 	    }
 	}
@@ -21,6 +19,7 @@ public class GBPMint extends MintFactory {
     }
     //To be called in Demo
     public Coin makeCoin() {
+
 		if (denom == 0.01) {
 			c = new GBPPence(0.01, cc, new CompPT());
 		} else if (denom == 0.02) {
@@ -59,23 +58,23 @@ public class GBPMint extends MintFactory {
 					System.out.println("Passed buffing!");
 				}
 			}
-		}
-		return c;
 	}
+	return c;
+}
 
     private void manafacture() {
-		c.smelt();
+	c.smelt();
     }
     private boolean inspection() {
-		// 1/12 chance of failing inspection 
-		return rand.nextInt(12) != 0; 
+	// 1/12 chance of failing inspection 
+	return rand.nextInt(12) != 0; 
     }
     private  boolean smoothing() {
-		// 1/1000 chance of failing smoothing
-		return rand.nextInt(1000) != 0;	
+	// 1/1000 chance of failing smoothing
+	return rand.nextInt(1000) != 0;	
     }
     private boolean buffing() {
-		// 1/1000 chance of failing buffing
-		return rand.nextInt(1000) != 0;
+	// 1/1000 chance of failing buffing
+	return rand.nextInt(1000) != 0;
     } 
 }

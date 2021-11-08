@@ -3,18 +3,17 @@ import java.util.Scanner;
 
 public class Demo {
 
-	Scanner coinMaking = new Scanner(System.in);
-	private String counterfeitCoinCountry;
-	private double counterfeitCoinDenomination;
+	public static void main(String[] args) {
 
-	public void main(String[] args) {
-
+		Scanner coinMaking = new Scanner(System.in);
+		String counterfeitCoinCountry;
+		double counterfeitCoinDenomination;
 
 		//Possibly consolidate this into makeCoin()
 		System.out.println("-----------------------------------------------------------------------------");
 		System.out.println("Welcome to Deep Fake!");
 		System.out.println("What coin would you like to make?");
-		System.out.println("Which counties coin do you want to make? Enter USD or GBP:");
+		System.out.println("Which countries coin do you want to make? Enter USD or GBP:");
 		counterfeitCoinCountry = coinMaking.nextLine();
 		counterfeitCoinCountry = counterfeitCoinCountry.toUpperCase();
 		while((!counterfeitCoinCountry.equals("USD")) && (!counterfeitCoinCountry.equals("GBP"))) {
@@ -23,35 +22,20 @@ public class Demo {
 			counterfeitCoinCountry.toUpperCase();
 		}
 
-		if(getCounterfeitCoinCountry().equals("USD")) {
+		if(counterfeitCoinCountry.equals("USD")) {
 			System.out.println("You want to make a USD Coin.");
 			System.out.println("What denomination do you want to make?");
 			counterfeitCoinDenomination = coinMaking.nextDouble();
-			USDMint = USDMint.getInstance(getCounterfeitCoinDenomination(), getCounterfeitCoinCountry());
-			USDMint.makeCoin();
+			USDMint USD = USDMint.getInstance(counterfeitCoinDenomination, counterfeitCoinCountry);
+			USD.makeCoin();
 		}
-		else if(getCounterfeitCoinCountry().equals("GBP")) {
+		else if(counterfeitCoinCountry.equals("GBP")) {
 			System.out.println("You want to make a GBP Coin.");
 			System.out.println("What denomination do you want to make?");
 			counterfeitCoinDenomination = coinMaking.nextDouble();
-			GBPMint = GBPMint.getInstance(getCounterfeitCoinDenomination(), getCounterfeitCoinCountry());
-			GBPMint.makeCoin();
+			GBPMint GBP = GBPMint.getInstance(counterfeitCoinDenomination, counterfeitCoinCountry);
+			GBP.makeCoin();
 		}
 	}
 
-	public String getCounterfeitCoinCountry() {
-		return counterfeitCoinCountry;
-	}
-
-	public double getCounterfeitCoinDenomination() {
-		return counterfeitCoinDenomination;
-	}
-	
-	public void setCounterfeitCoinCountry(String counterfeitCoinCountry) {
-		this.counterfeitCoinCountry = counterfeitCoinCountry;
-	}
-
-	public void setCounterfeitCoinDenomination(double counterfeitCoinDenomination) {
-		this.counterfeitCoinDenomination = counterfeitCoinDenomination;
-	}
 }
