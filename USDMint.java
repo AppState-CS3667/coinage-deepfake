@@ -43,22 +43,22 @@ public class USDMint extends MintFactory {
 		
 		c.display();
 		manafacture();
-		if (!inspection()) {
+		if (!inspection() || c.getDenomination() == 0) {
 			System.out.println("Failed inspection.");
 			return null;
 		} else {
 			System.out.println("Passed inspection!");
 			if(!smoothing()) {
-			System.out.println("Failed inspection.");
-			return null;
-			} else {
-			System.out.println("Passed smoothing!");
-			if(!buffing()) {
 				System.out.println("Failed inspection.");
 				return null;
 			} else {
-				System.out.println("Passed buffing!");
-			}
+				System.out.println("Passed smoothing!");
+				if(!buffing()) {
+					System.out.println("Failed inspection.");
+					return null;
+				} else {
+					System.out.println("Passed buffing!");
+				}
 			}
 		}
 		return c;
