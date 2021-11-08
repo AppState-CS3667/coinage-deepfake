@@ -3,18 +3,18 @@ import java.util.Scanner;
 
 public class Demo {
 
-	Scanner coinMaking = new Scanner(System.in);
-	private String counterfeitCoinCountry;
-	private double counterfeitCoinDenomination;
+	private static Scanner coinMaking = new Scanner(System.in);
+	private static String counterfeitCoinCountry;
+	private static double counterfeitCoinDenomination;
 
-	public void main(String[] args) {
+	public static void main(String[] args) {
 
 
 		//Possibly consolidate this into makeCoin()
 		System.out.println("-----------------------------------------------------------------------------");
 		System.out.println("Welcome to Deep Fake!");
 		System.out.println("What coin would you like to make?");
-		System.out.println("Which counties coin do you want to make? Enter USD or GBP:");
+		System.out.println("Which countries coin do you want to make? Enter USD or GBP:");
 		counterfeitCoinCountry = coinMaking.nextLine();
 		counterfeitCoinCountry = counterfeitCoinCountry.toUpperCase();
 		while((!counterfeitCoinCountry.equals("USD")) && (!counterfeitCoinCountry.equals("GBP"))) {
@@ -27,31 +27,31 @@ public class Demo {
 			System.out.println("You want to make a USD Coin.");
 			System.out.println("What denomination do you want to make?");
 			counterfeitCoinDenomination = coinMaking.nextDouble();
-			USDMint = USDMint.getInstance(getCounterfeitCoinDenomination(), getCounterfeitCoinCountry());
-			USDMint.makeCoin();
+			USDMint uSDMint = USDMint.getInstance(getCounterfeitCoinDenomination(), getCounterfeitCoinCountry());
+			uSDMint.makeCoin();
 		}
 		else if(getCounterfeitCoinCountry().equals("GBP")) {
 			System.out.println("You want to make a GBP Coin.");
 			System.out.println("What denomination do you want to make?");
 			counterfeitCoinDenomination = coinMaking.nextDouble();
-			GBPMint = GBPMint.getInstance(getCounterfeitCoinDenomination(), getCounterfeitCoinCountry());
-			GBPMint.makeCoin();
+			GBPMint gBPMint = GBPMint.getInstance(getCounterfeitCoinDenomination(), getCounterfeitCoinCountry());
+			gBPMint.makeCoin();
 		}
 	}
 
-	public String getCounterfeitCoinCountry() {
+	public static String getCounterfeitCoinCountry() {
 		return counterfeitCoinCountry;
 	}
 
-	public double getCounterfeitCoinDenomination() {
+	public static double getCounterfeitCoinDenomination() {
 		return counterfeitCoinDenomination;
 	}
 	
-	public void setCounterfeitCoinCountry(String counterfeitCoinCountry) {
-		this.counterfeitCoinCountry = counterfeitCoinCountry;
+	public static void setCounterfeitCoinCountry(String cCoinCountry) {
+		counterfeitCoinCountry = cCoinCountry;
 	}
 
-	public void setCounterfeitCoinDenomination(double counterfeitCoinDenomination) {
-		this.counterfeitCoinDenomination = counterfeitCoinDenomination;
+	public static void setCounterfeitCoinDenomination(double cCDenomination) {
+		counterfeitCoinDenomination = cCDenomination;
 	}
 }
