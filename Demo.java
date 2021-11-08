@@ -13,7 +13,7 @@ public class Demo {
 		System.out.println("-----------------------------------------------------------------------------");
 		System.out.println("Welcome to Deep Fake!");
 		System.out.println("What coin would you like to make?");
-		System.out.println("Which counties coin do you want to make? Enter USD or GBP:");
+		System.out.println("Which countries coin do you want to make? Enter USD or GBP:");
 		counterfeitCoinCountry = coinMaking.nextLine();
 		counterfeitCoinCountry = counterfeitCoinCountry.toUpperCase();
 		while((!counterfeitCoinCountry.equals("USD")) && (!counterfeitCoinCountry.equals("GBP"))) {
