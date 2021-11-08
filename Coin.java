@@ -6,7 +6,7 @@ public abstract class Coin implements smelting {
     private static class NullCoin extends Coin {
         @Override
         public void smelt() {
-            System.out.println("Null coin Cant smelt");
+            System.out.println("A Null coin can't be smelted");
         }
         @Override
         public void display() {
