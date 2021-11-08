@@ -15,6 +15,9 @@ public class GBPMint extends MintFactory {
 				}
 			}
 		}
+	    }
+	}
+	return uniqueMint;
     }
     //To be called in Demo
     public Coin makeCoin() {
