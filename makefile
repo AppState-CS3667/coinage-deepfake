@@ -8,7 +8,7 @@ default:
 	@echo "usage: make target"
 	@echo "5 available targets: clean - removes editor tmpfiles and .class files"
 	@echo "____________________ compile - builds codebase"
-	@echo "____________________ test - runs JUnit5 tests"
+	@echo "____________________ jtest - runs JUnit5 tests"
 	@echo "____________________ demo - compiles and runs our demo"
 
 compile: 
@@ -21,9 +21,13 @@ clean:
 	rm -f bin/*.class
 	rm -f src/*.class
 
-test: $(JUNIT5_JAR)
+jtest: $(JUNIT5_JAR)
 	java -cp .:$(JUNIT5_JAR) $(JUNIT5_RUNNER) --scan-class-path 
 
 demo: compile
 	javac -cp .:$(JUNIT5_JAR)$(JFLAGS) Demo.java
 	java -cp ./bin/ Demo
+
+test: compile
+	javac -cp .:$(JUNIT5_JAR)$(JFLAGS) Test.java
+	java -cp ./bin/ Test
