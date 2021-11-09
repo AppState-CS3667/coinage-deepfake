@@ -9,7 +9,7 @@ public class USDNickelTest {
     @Test
     public void testConstructor() {
 	try {
-	    Coin testUSDNickel = new USDNickel(1.0,"USD",new CompNFFTF());
+	    Coin testUSDNickel = new USDNickel(0.05,"USD",new CompNFFTF());
 	    assertNotNull(testUSDNickel);
 	}
 	catch (Exception e) {
@@ -19,7 +19,7 @@ public class USDNickelTest {
 
     @Test
     public void testSmelt() {
-	Coin testUSDNickel = new USDNickel(1.0,"USD",new CompNFFTF());
+	Coin testUSDNickel = new USDNickel(0.05,"USD",new CompNFFTF());
 	PrintStream origOut = System.out;
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	PrintStream newOut = new PrintStream(baos);
@@ -36,7 +36,7 @@ public class USDNickelTest {
     }
     @Test
     public void display() {
-	Coin testUSDNickel = new USDNickel(1.0,"USD",new CompNFFTF());
+	Coin testUSDNickel = new USDNickel(0.05,"USD",new CompNFFTF());
 	PrintStream origOut = System.out;
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	PrintStream newOut = new PrintStream(baos);
@@ -48,6 +48,15 @@ public class USDNickelTest {
 	testOutput = baos.toString();
 	System.setOut(origOut);
 	assertTrue(expectedResult.equals(testOutput),
+		"Expected:'" + expectedResult 
+		+ "' but got '" + testOutput + "'.");
+    }
+    @Test
+    public void testgetDenomination() {
+	Coin testUSDNickel = new USDNickel(0.05,"USD",new CompNFFTF());
+	Double expectedResult = 0.05;
+	Double testOutput = testUSDNickel.getDenomination();
+	assertEquals(expectedResult, testOutput,
 		"Expected:'" + expectedResult 
 		+ "' but got '" + testOutput + "'.");
     }

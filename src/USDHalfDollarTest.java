@@ -9,7 +9,7 @@ public class USDHalfDollarTest {
     @Test
     public void testConstructor() {
 	try {
-	    Coin testUSDHalfDollar = new USDHalfDollar(1.0,"USD",new CompHQD());
+	    Coin testUSDHalfDollar = new USDHalfDollar(0.5,"USD",new CompHQD());
 	    assertNotNull(testUSDHalfDollar);
 	}
 	catch (Exception e) {
@@ -19,7 +19,7 @@ public class USDHalfDollarTest {
 
     @Test
     public void testSmelt() {
-	Coin testUSDHalfDollar = new USDHalfDollar(1.0,"USD",new CompHQD());
+	Coin testUSDHalfDollar = new USDHalfDollar(0.5,"USD",new CompHQD());
 	PrintStream origOut = System.out;
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	PrintStream newOut = new PrintStream(baos);
@@ -36,7 +36,7 @@ public class USDHalfDollarTest {
     }
     @Test
     public void display() {
-	Coin testUSDHalfDollar = new USDHalfDollar(1.0,"USD",new CompHQD());
+	Coin testUSDHalfDollar = new USDHalfDollar(0.5,"USD",new CompHQD());
 	PrintStream origOut = System.out;
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	PrintStream newOut = new PrintStream(baos);
@@ -48,6 +48,15 @@ public class USDHalfDollarTest {
 	testOutput = baos.toString();
 	System.setOut(origOut);
 	assertTrue(expectedResult.equals(testOutput),
+		"Expected:'" + expectedResult 
+		+ "' but got '" + testOutput + "'.");
+    }
+    @Test
+    public void testgetDenomination() {
+	Coin testUSDHalfDollar = new USDHalfDollar(0.5,"USD",new CompHQD());
+	Double expectedResult = 0.5;
+	Double testOutput = testUSDHalfDollar.getDenomination();
+	assertEquals(expectedResult, testOutput,
 		"Expected:'" + expectedResult 
 		+ "' but got '" + testOutput + "'.");
     }

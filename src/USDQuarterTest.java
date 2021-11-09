@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 
-public class USDDollarTest {
+public class USDQuarterTest {
     @Test
     public void testConstructor() {
 	try {
-	    Coin testUSDDollar = new USDDollar(1.0,"USD",new CompD());
-	    assertNotNull(testUSDDollar);
+	    Coin testUSDQuarter = new USDQuarter(0.25,"USD",new CompHQD());
+	    assertNotNull(testUSDQuarter);
 	}
 	catch (Exception e) {
 	    fail("Constructor threw exception: " + e.getMessage());
@@ -19,14 +19,14 @@ public class USDDollarTest {
 
     @Test
     public void testSmelt() {
-	Coin testUSDDollar = new USDDollar(1.0,"USD",new CompD());
+	Coin testUSDQuarter = new USDQuarter(0.25,"USD",new CompHQD());
 	PrintStream origOut = System.out;
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	PrintStream newOut = new PrintStream(baos);
 	System.setOut(newOut);
-	String expectedResult = "Beginning smelting:\n88.5% Cu\n6% Zi\n3.5% Mn\n2% Ni\n";; 
+	String expectedResult = "Beginning smelting:\n91.67% Cu\n8.33% Ni\n";; 
 	String testOutput = null;
-	testUSDDollar.smelt();
+	testUSDQuarter.smelt();
 	System.out.flush();
 	testOutput = baos.toString();
 	System.setOut(origOut);
@@ -36,14 +36,14 @@ public class USDDollarTest {
     }
     @Test
     public void display() {
-	Coin testUSDDollar = new USDDollar(1.0,"USD",new CompD());
+	Coin testUSDQuarter = new USDQuarter(0.25,"USD",new CompHQD());
 	PrintStream origOut = System.out;
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	PrintStream newOut = new PrintStream(baos);
 	System.setOut(newOut);
-	String expectedResult = "Minting a USD Dollar!\n"; 
+	String expectedResult = "Minting a USD Quarter!\n"; 
 	String testOutput = null;
-	testUSDDollar.display();
+	testUSDQuarter.display();
 	System.out.flush();
 	testOutput = baos.toString();
 	System.setOut(origOut);
@@ -53,9 +53,9 @@ public class USDDollarTest {
     }
     @Test
     public void testgetDenomination() {
-	Coin testUSDDollar = new USDDollar(1.0,"USD",new CompD());
-	Double expectedResult = 1.0;
-	Double testOutput = testUSDDollar.getDenomination();
+	Coin testUSDQuarter = new USDQuarter(0.25,"USD",new CompHQD());
+	Double expectedResult = 0.25;
+	Double testOutput = testUSDQuarter.getDenomination();
 	assertEquals(expectedResult, testOutput,
 		"Expected:'" + expectedResult 
 		+ "' but got '" + testOutput + "'.");

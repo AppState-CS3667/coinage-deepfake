@@ -51,4 +51,13 @@ public class USDDimeTest {
 		"Expected:'" + expectedResult 
 		+ "' but got '" + testOutput + "'.");
     }
+    @Test
+    public void testgetDenomination() {
+	Coin testUSDDime = new USDDime(0.1,"USD",new CompHQD());
+	Double expectedResult = 0.1;
+	Double testOutput = testUSDDime.getDenomination();
+	assertEquals(expectedResult, testOutput,
+		"Expected:'" + expectedResult 
+		+ "' but got '" + testOutput + "'.");
+    }
 }

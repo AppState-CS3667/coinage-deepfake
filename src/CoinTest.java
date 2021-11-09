@@ -38,6 +38,20 @@ public class CoinTest extends Coin {
 		"Expected:'" + expectedResult 
 		+ "' but got '" + testOutput + "'.");
     }
+
+    @Test
+    public void testgetDenomination() {
+	Coin testCoin = new CoinTest();
+	PrintStream origOut = System.out;
+	ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	PrintStream newOut = new PrintStream(baos);
+	System.setOut(newOut);
+	Double expectedResult = 0.05;
+	Double testOutput = testCoin.getDenomination();
+	assertEquals(expectedResult, testOutput,
+		"Expected:'" + expectedResult 
+		+ "' but got '" + testOutput + "'.");
+    }
     public void display() {
 	return;
     }
