@@ -65,18 +65,18 @@ public class USDMint extends MintFactory {
 	  return c;
  	}
 
-    private void manafacture() {
+    public void manafacture() {
 	c.smelt();
     }
-    private boolean inspection() {
+    public boolean inspection() {
 	// 1/12 chance of failing inspection 
 	return rand.nextInt(12) != 0;
     }
-    private  boolean smoothing() {
+    public boolean smoothing() {
 	// 1/1000 chance of failing smoothing
 	return rand.nextInt(1000) != 0;	
     }
-    private boolean buffing() {
+    public boolean buffing() {
 	// 1/1000 chance of failing buffing
 	return rand.nextInt(1000) != 0;
     } 
