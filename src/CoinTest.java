@@ -5,18 +5,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 
-class TestCoin extends Coin {
-    public TestCoin() {
+public class CoinTest extends Coin {
+    public CoinTest() {
 	super(0.05, "USD", new CompNFFTF());
     }
-}
-
-public class CoinTest {
 
     @Test
     public void testConstructor() {
 	try {
-	    Coin testCoin = new TestCoin();
+	    Coin testCoin = new CoinTest();
 	    assertNotNull(testCoin);
 	}
 	catch (Exception e) {
@@ -26,7 +23,7 @@ public class CoinTest {
 
     @Test
     public void testSmelt() {
-	Coin testCoin = new testCoin();
+	Coin testCoin = new CoinTest();
 	PrintStream origOut = System.out;
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	PrintStream newOut = new PrintStream(baos);
@@ -40,5 +37,8 @@ public class CoinTest {
 	assertTrue(expectedResult.equals(testOutput),
 		"Expected:'" + expectedResult 
 		+ "' but got '" + testOutput + "'.");
+    }
+    public void display() {
+	return;
     }
 }
