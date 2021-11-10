@@ -36,4 +36,4 @@ demo: compile
 	java -cp ./bin/ Demo
 
 check: mystyle.xml
-	java $(CKSTYLE_COMMAND) -c ./mystyle.xml ./src/*.java	
+	java $(CKSTYLE_COMMAND) -c ./mystyle.xml ./src/*[^Test].java	
