@@ -1,7 +1,14 @@
+#
+# makefile
+#
+# @author DeepFake Crew
+# @version Fall 2021
+#
+
 JUNIT5_JAR = junit-platform-console-standalone-1.2.0.jar 
 JUNIT5_RUNNER = org.junit.platform.console.ConsoleLauncher
 JFLAGS = -d bin -sourcepath src
-
+CKSTYLE_COMMAND =  -jar ./checkstyle-5.5-all.jar
 SOURCEDIR = src/
 
 default: 
@@ -28,3 +35,5 @@ demo: compile
 	javac -cp .:$(JUNIT5_JAR)$(JFLAGS) Demo.java
 	java -cp ./bin/ Demo
 
+check: mystyle.xml
+	java $(CKSTYLE_COMMAND) -c ./mystyle.xml ./src/*.java	
