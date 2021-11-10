@@ -5,11 +5,11 @@
  * (pound)
  */
 public class CompPo implements smelting{
-    /*
-     * smelting method - displays composition
+	/*
+	 * smelting method - displays composition
 	 * @return void
-     */
-    public void smelt() {
-        System.out.println("70% Cu\n24.5% Zi\n5.5% Ni");
-    }
+	 */
+	public void smelt() {
+		System.out.println("70% Cu\n24.5% Zi\n5.5% Ni");
+	}
 }
