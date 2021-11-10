@@ -5,11 +5,11 @@
  * (two pence, pence)
  */
 public class CompPT implements smelting{
-    /*
-     * smelting method - displays composition
+	/*
+	 * smelting method - displays composition
 	 * @return void
-     */
-    public void smelt() {
-        System.out.println("Cu Plated Steel");
-    }
+	 */
+	public void smelt() {
+		System.out.println("Cu Plated Steel");
+	}
 }
