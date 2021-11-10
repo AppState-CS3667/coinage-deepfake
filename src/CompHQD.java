@@ -5,11 +5,11 @@
  * (half dollar, quarter, dime)
  */
 public class CompHQD implements smelting{
-	/*
-	 * smelting method - displays composition
-	 * @return void
-	 */
-	public void smelt() {
-		System.out.println("91.67% Cu\n8.33% Ni");
-	}
+    /*
+     * smelting method - displays composition
+     * @return void
+     */
+    public void smelt() {
+        System.out.println("91.67% Cu\n8.33% Ni");
+    }
 }
