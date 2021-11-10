@@ -5,11 +5,11 @@
  * (twenty pence)
  */
 public class CompTp implements smelting{
-    /*
-     * smelting method - displays composition
+	/*
+	 * smelting method - displays composition
 	 * @return void
-     */
-    public void smelt() {
-        System.out.println("84% Cu\n16% Ni");
-    }
+	 */
+	public void smelt() {
+		System.out.println("84% Cu\n16% Ni");
+	}
 }
