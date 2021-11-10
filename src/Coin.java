@@ -4,16 +4,51 @@
  * @version 1.0 
  */
 public abstract class Coin implements smelting {
-
+    
     /*
      * Fields
      * double denomination = value of the coin
      * String countryCode = which country is the coin from
      * smelting composition = metalurgical composition of the coin 
-     */ 	
+     */
     protected double denomination;
     protected String countryCode;
     private smelting composition;
+    public static Coin NULL = new NullCoin();
+
+    /*
+    * private static NullCoin class
+    *
+    *
+    */
+    private static class NullCoin extends Coin {
+        /*
+        * smelt()
+        * @return void
+        * null coin smelt
+        */
+        @Override
+        public void smelt() {
+            System.out.println("A Null coin can't be smelted");
+        }
+        /*
+        * display()
+        * @return void
+        * displays null coin 
+        */
+        @Override
+        public void display() {
+            System.out.println("Incompatable denomination Null coin created");
+        }
+        /*
+        * NullCoin()
+        * Constructer
+        *
+        */
+	    public NullCoin() {
+	        super(0.0,"",null);
+	    }
+    }
 
     /*
      * Coin()
@@ -43,4 +78,13 @@ public abstract class Coin implements smelting {
      *  @return void
      */ 
     public abstract void display();
+
+    /*
+    * getDenomination()
+    * @return double
+    * Getter for the coins denomination.
+    */
+    public double getDenomination() {
+        return denomination;
+    }
 }
