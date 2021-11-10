@@ -5,7 +5,7 @@
  * @version 1.0 
  */
 public abstract class Coin implements smelting {
-    
+
     /*
      * Fields
      * double denomination = value of the coin
@@ -18,37 +18,37 @@ public abstract class Coin implements smelting {
     public static Coin NULL = new NullCoin();
 
     /*
-    * private static NullCoin class
-    *
-    *
-    */
+     * private static NullCoin class
+     *
+     *
+     */
     private static class NullCoin extends Coin {
         /*
-        * smelt()
-        * @return void
-        * null coin smelt
-        */
+         * smelt()
+         * @return void
+         * null coin smelt
+         */
         @Override
-        public void smelt() {
-            System.out.println("A Null coin can't be smelted");
-        }
+            public void smelt() {
+                System.out.println("A Null coin can't be smelted");
+            }
         /*
-        * display()
-        * @return void
-        * displays null coin 
-        */
+         * display()
+         * @return void
+         * displays null coin 
+         */
         @Override
-        public void display() {
-            System.out.println("Incompatable denomination Null coin created");
-        }
+            public void display() {
+                System.out.println("Incompatable denomination Null coin created");
+            }
         /*
-        * NullCoin()
-        * Constructer
-        *
-        */
-	    public NullCoin() {
-	        super(0.0,"",null);
-	    }
+         * NullCoin()
+         * Constructer
+         *
+         */
+        public NullCoin() {
+            super(0.0,"",null);
+        }
     }
 
     /*
@@ -81,10 +81,10 @@ public abstract class Coin implements smelting {
     public abstract void display();
 
     /*
-    * getDenomination()
-    * @return double
-    * Getter for the coins denomination.
-    */
+     * getDenomination()
+     * @return double
+     * Getter for the coins denomination.
+     */
     public double getDenomination() {
         return denomination;
     }
