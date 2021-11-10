@@ -5,12 +5,12 @@
  * (nickel, five pound, fifty pence, ten pence, five pence)
  */
 public class CompNFFTF implements smelting{
-    /*
-     * smelting method - displays composition
+	/*
+	 * smelting method - displays composition
 	 * @return void
-     */
-    public void smelt() {
-        System.out.println("75% Cu\n25% Ni");
-    }
+	 */
+	public void smelt() {
+		System.out.println("75% Cu\n25% Ni");
+	}
 }
 
