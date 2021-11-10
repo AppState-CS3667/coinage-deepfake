@@ -5,42 +5,42 @@
  */
 public abstract class Coin implements smelting {
 
-    /*
-     * Fields
-     * double denomination = value of the coin
-     * String countryCode = which country is the coin from
-     * smelting composition = metalurgical composition of the coin 
-     */ 	
-    protected double denomination;
-    protected String countryCode;
-    private smelting composition;
+	/*
+	 * Fields
+	 * double denomination = value of the coin
+	 * String countryCode = which country is the coin from
+	 * smelting composition = metalurgical composition of the coin 
+	 */ 	
+	protected double denomination;
+	protected String countryCode;
+	private smelting composition;
 
-    /*
-     * Coin()
-     * Coin constructor 
-     * @param double denomination
-     * @param String countryCode
-     * @param smelting composition
-     *
-     */ 
-    public Coin(double denomination, String countryCode, smelting composition) {
-        this.denomination = denomination;
-        this.countryCode = countryCode;
-        this.composition = composition;
-    }
+	/*
+	 * Coin()
+	 * Coin constructor 
+	 * @param double denomination
+	 * @param String countryCode
+	 * @param smelting composition
+	 *
+	 */ 
+	public Coin(double denomination, String countryCode, smelting composition) {
+		this.denomination = denomination;
+		this.countryCode = countryCode;
+		this.composition = composition;
+	}
 
-    /*
-     * smelt()
-     * @return void
-     * Adds the mealurigical composition value to the coin
-     */ 
-    public void smelt() {
-        System.out.println("Beginning smelting:");
-        composition.smelt();
-    }
+	/*
+	 * smelt()
+	 * @return void
+	 * Adds the mealurigical composition value to the coin
+	 */ 
+	public void smelt() {
+		System.out.println("Beginning smelting:");
+		composition.smelt();
+	}
 
-    /* abstract display()
-     *  @return void
-     */ 
-    public abstract void display();
+	/* abstract display()
+	 *  @return void
+	 */ 
+	public abstract void display();
 }
