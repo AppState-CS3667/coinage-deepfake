@@ -4,20 +4,20 @@
  * @version 1.0
  */
 public class GBPPound extends Coin {
-    /*
-     * Coin constructor
-     * @param double denomination
-     * @param String countryCode
-     * @param smelting composition
-     */
-    public GBPPound(double denomination, String countryCode, smelting composition) {
-        super(denomination, countryCode, composition);
-    }
-    /*
-     * Method to run minting message
+	/*
+	 * Coin constructor
+	 * @param double denomination
+	 * @param String countryCode
+	 * @param smelting composition
+	 */
+	public GBPPound(double denomination, String countryCode, smelting composition) {
+		super(denomination, countryCode, composition);
+	}
+	/*
+	 * Method to run minting message
 	 * @return void
-     */
-    public void display () {
-        System.out.println("Minting a GBP Pound!");
-    }
+	 */
+	public void display () {
+		System.out.println("Minting a GBP Pound!");
+	}
 }
