@@ -5,11 +5,11 @@
  * (penny)
  */
 public class CompP implements smelting{
-	/*
-	 * smelting method - displays composition
-	 * @return void
-	 */
-	public void smelt() {
-		System.out.println("2.5% Cu\n97.5% Zi");
-	}
+    /*
+     * smelting method - displays composition
+     * @return void
+     */
+    public void smelt() {
+        System.out.println("2.5% Cu\n97.5% Zi");
+    }
 }
