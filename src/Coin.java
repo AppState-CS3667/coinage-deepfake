@@ -51,9 +51,9 @@ public abstract class Coin implements smelting {
      */ 
     public Coin(double denomination, String countryCode,
     smelting composition) {
-        this.denomination = denomination_;
-        this.countryCode = countryCode_;
-        this.composition = composition_;
+        this.denomination = denomination;
+        this.countryCode = countryCode;
+        this.composition = composition;
     }
 
     /**Adds the mealurigical composition value to the coin.
