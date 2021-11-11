@@ -8,4 +8,4 @@
 </p>
 
 ---
-This submission is meant to demonstrate the real world scenario of implementing various OOP design patterns in a team setting. For this project we implemented the Double Check Lock Singleton combined with the Factory method for the concrete Mint classes, the strategy pattern for smelting the coins, and the Null Object pattern for the null coin behaviour. Many exciting (and albeit stressful at times) hurdles were overcome to get this project to its current fruition and some mistakes were made along the we but we're proud of this and we hope you enjoy it too. 
+This submission is meant to demonstrate the real world scenario of implementing various OOP design patterns in a team setting. For this project we implemented the Double Check Lock Singleton combined with the Factory Method for the concrete mint classes, the Strategy Pattern for smelting the coins, and the Null Object Pattern for the null coin behaviour. Many exciting hurdles were overcome to get this project to its current fruition and some mistakes were made along the way but we're proud of this and we hope you enjoy it too. 
