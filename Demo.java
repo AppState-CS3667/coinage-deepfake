@@ -49,7 +49,7 @@ public class Demo {
                 try {
                     counterfeitCoinDenomination = Double.parseDouble(coinMaking.nextLine());
                 } catch (NumberFormatException e) {
-                    counterfeitCoinDenomination = 100;
+		    counterfeitCoinDenomination = 100;
                 }
                 GBPMint GBP = GBPMint.getInstance(counterfeitCoinDenomination, counterfeitCoinCountry);
                 GBP.makeCoin();

@@ -56,7 +56,9 @@ public class GBPMint extends MintFactory {
             c = new GBPTwoPound(2, cc, new CompT());
         } else if (denom == 5) {
             c = new GBPFivePound(5, cc, new CompNFFTF());
-        }
+        } else {
+	    c = Coin.NULL; 
+	}
         c.display();
         manafacture();
         if (!inspection() || c.getDenomination() == 0) {
