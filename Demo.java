@@ -37,8 +37,10 @@ public class Demo {
                 System.out.printf("What denomination do you want to make? (Enter 1, .5, .25, .1, .05, or .01) : ");
                 try {
                     counterfeitCoinDenomination = Double.parseDouble(coinMaking.nextLine());
+                    System.out.println();
                 } catch (NumberFormatException e) {
                     counterfeitCoinDenomination = 100;
+                    System.out.println();
                 }
                 USDMint USD = USDMint.getInstance();
                 USD.makeCoin(counterfeitCoinDenomination, counterfeitCoinCountry);
@@ -46,10 +48,13 @@ public class Demo {
             else if(counterfeitCoinCountry.equals("GBP")) {
                 System.out.println("\nYou want to make a GBP Coin.");
                 System.out.printf("What denomination do you want to make? (Enter 5, 2, 1, .5, .2, .1, .05, .02, .01) : ");
+               
                 try {
                     counterfeitCoinDenomination = Double.parseDouble(coinMaking.nextLine());
+                    System.out.println();
                 } catch (NumberFormatException e) {
-		    counterfeitCoinDenomination = 100;
+		            counterfeitCoinDenomination = 100;
+                    System.out.println();
                 }
                 GBPMint GBP = GBPMint.getInstance();
                 GBP.makeCoin(counterfeitCoinDenomination, counterfeitCoinCountry);
