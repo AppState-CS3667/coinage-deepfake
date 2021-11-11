@@ -12,34 +12,35 @@ public class USDMint extends MintFactory {
     private volatile static USDMint uniqueMint;
     private Coin c;
     /*
-     * Constructor for USDMint class
-     */
-    private USDMint(double denom_, String cc_) {
-        denom = denom_;
-        cc = cc_;
-    } 
-    /*
      * getInstance method to ensure only a single instance is created
-     * @param double denom
-     * @param String cc
      * @return USDMint
      */
-    public static USDMint getInstance(double denom, String cc) {
+    public static USDMint getInstance() {
         if (uniqueMint == null) {
             synchronized (USDMint.class) {
                 if (uniqueMint == null) {
-                    uniqueMint = new USDMint(denom, cc); 
+                    uniqueMint = new USDMint(); 
                 }
             }
         }
         return uniqueMint;
     }
+    /**
+     * Helper method that initializes the coin's values
+     * @param double denom
+     * @param String cc
+     */
+    public void init(double denom_, String cc_) {
+	denom = denom_;
+	cc = cc_;
+    }
     /*
      * Method to create coin
      * @return Coin
      */
-    public Coin makeCoin() {
-        if(denom == 0.01) {
+    public Coin makeCoin(double denom_, String cc_) {
+        init(denom_, cc_);
+	if(denom == 0.01) {
             c = new USDPenny(0.01, cc, new CompP());
         }
         else if (denom == 0.05) {

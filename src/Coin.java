@@ -40,7 +40,7 @@ public abstract class Coin implements smelting {
         @Override
         public void display() {
             System.out.println("Incompatable denomination"
-                + "Null coin created");
+                + " Null coin created");
         }
     }
 

@@ -40,8 +40,8 @@ public class Demo {
                 } catch (NumberFormatException e) {
                     counterfeitCoinDenomination = 100;
                 }
-                USDMint USD = USDMint.getInstance(counterfeitCoinDenomination, counterfeitCoinCountry);
-                USD.makeCoin();
+                USDMint USD = USDMint.getInstance();
+                USD.makeCoin(counterfeitCoinDenomination, counterfeitCoinCountry);
             }
             else if(counterfeitCoinCountry.equals("GBP")) {
                 System.out.println("\nYou want to make a GBP Coin.");
@@ -51,8 +51,8 @@ public class Demo {
                 } catch (NumberFormatException e) {
 		    counterfeitCoinDenomination = 100;
                 }
-                GBPMint GBP = GBPMint.getInstance(counterfeitCoinDenomination, counterfeitCoinCountry);
-                GBP.makeCoin();
+                GBPMint GBP = GBPMint.getInstance();
+                GBP.makeCoin(counterfeitCoinDenomination, counterfeitCoinCountry);
             }
         } while (!counterfeitCoinCountry.equals("0"));
         System.out.println("\n                              ~ Thanks for minting with Deep Fake! ~");

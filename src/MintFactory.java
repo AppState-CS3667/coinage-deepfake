@@ -14,7 +14,9 @@ public abstract class MintFactory {
     protected String cc = "";
     protected Random rand = new Random();
     /**abstract makeCoin method.
+     * @param double denom
+     * @param String cc
      * @return Coin
      */
-    abstract Coin makeCoin();
+    abstract Coin makeCoin(double denom, String cc);
 }

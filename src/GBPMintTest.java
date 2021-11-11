@@ -15,8 +15,8 @@ public class GBPMintTest {
      */
     @Test
         public void testGetInstance() {
-            GBPMint testA = GBPMint.getInstance(0.1,"GBP");
-            GBPMint testB = GBPMint.getInstance(0.1,"GBP");
+            GBPMint testA = GBPMint.getInstance();
+            GBPMint testB = GBPMint.getInstance();
             assertTrue(testA == testB, "Expected testB to point to testA but a new GBPMint was created!");
         }
     /*
@@ -25,8 +25,8 @@ public class GBPMintTest {
      */
     @Test
         public void testManafacture() {	
-            GBPMint testMint = GBPMint.getInstance(0.01,"GBP");
-            testMint.makeCoin();
+            GBPMint testMint = GBPMint.getInstance();
+            testMint.makeCoin(0.01,"GBP");
             PrintStream origOut = System.out;
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             PrintStream newOut = new PrintStream(baos);
@@ -48,9 +48,9 @@ public class GBPMintTest {
     @Test
         public void testMakeCoin() {
             Coin testCoin = null;
-            GBPMint testMint = GBPMint.getInstance(0.01,"GBP");
+            GBPMint testMint = GBPMint.getInstance();
             for (int i = 0; i < 48; ++i) {
-                testCoin = testMint.makeCoin();
+                testCoin = testMint.makeCoin(0.01,"GBP");
                 if (testCoin != null) break;
             }
             assertNotNull(testCoin, "Expected makeCoin to return a non-null coin after 48 iterations!");
@@ -62,7 +62,7 @@ public class GBPMintTest {
      */
     @Test
         public void testInspection() {
-            GBPMint testMint = GBPMint.getInstance(0.01,"GBP");
+            GBPMint testMint = GBPMint.getInstance();
             boolean inspect = true;
             for (int i = 0; i < 48; ++i) {
                 inspect = testMint.inspection();
@@ -76,7 +76,7 @@ public class GBPMintTest {
      */
     @Test
         public void testSmoothing() {
-            GBPMint testMint = GBPMint.getInstance(0.01,"GBP");
+            GBPMint testMint = GBPMint.getInstance();
             boolean smoothing = true;
             for (int i = 0; i < 400000; ++i) {
                 smoothing = testMint.smoothing();
@@ -90,7 +90,7 @@ public class GBPMintTest {
      */
     @Test
         public void testBuffing() {
-            GBPMint testMint = GBPMint.getInstance(0.01,"GBP");
+            GBPMint testMint = GBPMint.getInstance();
             boolean buffing = true;
             for (int i = 0; i < 400000; ++i) {
                 buffing = testMint.buffing();

@@ -12,32 +12,34 @@ public class GBPMint extends MintFactory {
     private volatile static GBPMint uniqueMint;
     private Coin c;
     /*
-     * Constructor for GBPMint class
-     */
-    private GBPMint(double denom_, String cc_) {
-        denom = denom_;
-        cc = cc_;
-    } 
-    /*
      * getInstance method to ensure only a single instance is created
      * @param double denom
      * @param String cc
      */
-    public static GBPMint getInstance(double denom, String cc) {
+    public static GBPMint getInstance() {
         if (uniqueMint == null) {
             synchronized (GBPMint.class) {
                 if (uniqueMint == null) {
-                    uniqueMint = new GBPMint(denom, cc); 
+                    uniqueMint = new GBPMint(); 
                 }
             }
         }
         return uniqueMint;
     }
+    /**
+     * helper method that initializes the coin's values
+     * @param double denom
+     * @param String cc
+     */
+    public void init(double denom_, String cc_) {
+	denom = denom_;
+	cc = cc_;
+    }
     /*
      * Method to create coin
      */
-    public Coin makeCoin() {
-
+    public Coin makeCoin(double denom, String cc) {
+	init(denom, cc);
         if (denom == 0.01) {
             c = new GBPPence(0.01, cc, new CompPT());
         } else if (denom == 0.02) {

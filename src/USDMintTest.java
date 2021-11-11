@@ -15,8 +15,10 @@ public class USDMintTest {
      */
     @Test
         public void testGetInstance() {
-            USDMint testA = USDMint.getInstance(0.1,"USD");
-            USDMint testB = USDMint.getInstance(0.1,"USD");
+            USDMint testA = USDMint.getInstance();
+	    testA.init(0.1,"USD");
+            USDMint testB = USDMint.getInstance();
+	    testB.init(0.1,"USD");
             assertTrue(testA == testB, "Expected testB to point to testA but a new USDMint was created!");
         }
     /*
@@ -25,8 +27,8 @@ public class USDMintTest {
      */
     @Test
         public void testManafacture() {	
-            USDMint testMint = USDMint.getInstance(0.01,"USD");
-            testMint.makeCoin();
+            USDMint testMint = USDMint.getInstance();
+            testMint.makeCoin(0.01,"USD");
             PrintStream origOut = System.out;
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             PrintStream newOut = new PrintStream(baos);
@@ -48,13 +50,13 @@ public class USDMintTest {
     @Test
         public void testMakeCoin() {
             Coin testCoin = null;
-            USDMint testMint = USDMint.getInstance(0.01,"USD");
+            USDMint testMint = USDMint.getInstance();
             for (int i = 0; i < 48; ++i) {
-                testCoin = testMint.makeCoin();
+                testCoin = testMint.makeCoin(0.25,"USD");
                 if (testCoin != null) break;
             }
             assertNotNull(testCoin, "Expected makeCoin to return a non-null coin after 48 iterations!");
-            assertTrue(testCoin instanceof USDPenny, "Expected makeCoin to return instance of USDPenny but was " + testCoin.getClass().getName());
+            assertTrue(testCoin instanceof USDQuarter, "Expected makeCoin to return instance of USDQuarter but was " + testCoin.getClass().getName());
         }
     /*
      * Method for testing inspection test
@@ -62,7 +64,7 @@ public class USDMintTest {
      */
     @Test
         public void testInspection() {
-            USDMint testMint = USDMint.getInstance(0.01,"USD");
+            USDMint testMint = USDMint.getInstance();
             boolean inspect = true;
             for (int i = 0; i < 48; ++i) {
                 inspect = testMint.inspection();
@@ -76,7 +78,7 @@ public class USDMintTest {
      */
     @Test
         public void testSmoothing() {
-            USDMint testMint = USDMint.getInstance(0.01,"USD");
+            USDMint testMint = USDMint.getInstance();
             boolean smoothing = true;
             for (int i = 0; i < 400000; ++i) {
                 smoothing = testMint.smoothing();
@@ -90,7 +92,7 @@ public class USDMintTest {
      */
     @Test
         public void testBuffing() {
-            USDMint testMint = USDMint.getInstance(0.01,"USD");
+            USDMint testMint = USDMint.getInstance();
             boolean buffing = true;
             for (int i = 0; i < 400000; ++i) {
                 buffing = testMint.buffing();
