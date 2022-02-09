@@ -4,7 +4,7 @@
 <p align="center">
   <font size="8"><strong>DeepFake</strong></font><br/>
   <i>Submission for CS-3667-101 Fall 2021</i><br/>
-  <strong>Created By: Isaac Allen, Baylor Matney, Ty Brucker, and Logan Richardson</strong></br>
+  <strong>Created By: Isaac Allen, Logan Richardson, Baylor Matney, and Ty Brucker</strong></br>
 </p>
 
 ---
